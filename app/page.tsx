@@ -1,5 +1,7 @@
 'use client';
 import { useState } from 'react';
+import { toast } from 'sonner';
+
 export default function Home() {
     //check loading...
     const [loading, setLoading] = useState(false);
@@ -29,6 +31,9 @@ export default function Home() {
             <div className='z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex'>
                 {loading && <p>Loaging...</p>}
                 <button onClick={fetchDataFromApi}>click</button>
+                <div>
+                    <button onClick={() => toast.success('Success!!')}>Give me a toast</button>
+                </div>
             </div>
         </main>
     );

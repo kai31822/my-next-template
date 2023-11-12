@@ -3,7 +3,7 @@ import { Inter, Agbalumo } from 'next/font/google';
 import './globals.css';
 //ui
 import Navbar from '@/app/components/ui/Navbar';
-
+import { Toaster } from 'sonner';
 //
 const inter = Inter({ subsets: ['latin'] });
 // const agbalumo = Agbalumo({ weight: '400', subsets: ['latin'] });
@@ -26,6 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <body className={inter.className}>
                 <Navbar></Navbar>
                 <main> {children}</main>
+                <Toaster richColors position='top-right' closeButton />
             </body>
         </html>
     );

@@ -1,6 +1,8 @@
 // import Header from '@/app/components/ui/Header/index';
 import React from 'react';
 import type { Metadata } from 'next';
+
+// import Toastify from '@/app/components/ui/toastify/sonner/toastify';
 // import Image from 'next/image';
 
 export const metadata: Metadata = {
