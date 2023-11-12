@@ -1,8 +1,9 @@
 'use client';
 import { useState } from 'react';
 import { toast } from 'sonner';
-
+import { useAppContext } from '@/app/context';
 export default function Home() {
+    const { state, setState } = useAppContext();
     //check loading...
     const [loading, setLoading] = useState(false);
     //fetch data
@@ -34,6 +35,15 @@ export default function Home() {
                 <div>
                     <button onClick={() => toast.success('Success!!')}>Give me a toast</button>
                 </div>
+                <h1>appwrapper:</h1>
+                <span>{state}</span>
+                <button
+                    onClick={() => {
+                        setState('1');
+                    }}
+                >
+                    change!
+                </button>
             </div>
         </main>
     );

@@ -4,6 +4,7 @@ import './globals.css';
 //ui
 import Navbar from '@/app/components/ui/Navbar';
 import { Toaster } from 'sonner';
+import { AppWrapper } from './context';
 //
 const inter = Inter({ subsets: ['latin'] });
 // const agbalumo = Agbalumo({ weight: '400', subsets: ['latin'] });
@@ -24,9 +25,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html lang='en'>
             <body className={inter.className}>
-                <Navbar></Navbar>
-                <main> {children}</main>
-                <Toaster richColors position='top-right' closeButton />
+                <AppWrapper>
+                    <Navbar></Navbar>
+                    <main> {children}</main>
+                    <Toaster richColors position='top-right' closeButton />
+                </AppWrapper>
             </body>
         </html>
     );
