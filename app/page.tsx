@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { toast } from 'sonner';
 import { useAppContext } from '@/app/context';
+import Slides from '@/app/components/carousel'
 export default function Home() {
     const { state, setState } = useAppContext();
     //check loading...
@@ -27,8 +28,12 @@ export default function Home() {
             setLoading(false);
         }
     };
+
     return (
         <main className='flex min-h-screen flex-col items-center justify-between p-24'>
+            {/*  */}
+            <Slides ></Slides>
+            {/*  */}
             <div className='z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex'>
                 {loading && <p>Loaging...</p>}
                 <button onClick={fetchDataFromApi}>click</button>
